@@ -1,0 +1,1 @@
+./jobs/twitter.rb:    puts "\e[33mFor the twitter widget to work, you need to put in your twitter API keys in the jobs/twitter.rb file.\e[0m"
