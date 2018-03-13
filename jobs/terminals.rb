@@ -9,7 +9,7 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
   respprev = resp
   resp = { provisioned: 40, active: 35 + (rand * 6).to_i, outofdate: (rand * 3).to_i}
   if resp[:provisioned] != respprev[:provisioned]
-    send_event('mis01_terminals_provisioned', { value: resp[:provisioned]} )
+    send_event('mis01_terminals_deployed', { value: resp[:provisioned]} )
   end
   if resp[:active] != respprev[:active]
     send_event('mis01_terminals_active', { value: resp[:active]} )

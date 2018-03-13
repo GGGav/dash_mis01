@@ -3,9 +3,19 @@
 #   send_event('widget_id', { })
 # end
 
+#  Use this as http template
+#         https://gist.github.com/charlesrg/f8246808b73f872d631e41336d1b05b7
+#  Could use this as https template
+#         https://gist.github.com/pszypowicz/bc07528ed7ae79bf49aa
+
+
+
 resp = { fileserver1: 0, fileserver2: 0}
 
 SCHEDULER.every '5s', :first_in => 0 do |job|
+
+
+
   respprev = resp
   resp = { fileserver1: (rand * 2).to_i, fileserver2: (rand * 2).to_i}
   if resp[:fileserver1] != respprev[:fileserver1]
