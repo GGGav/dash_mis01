@@ -1,0 +1,17 @@
+TODO
+====
+
+Jobs need to run immediately and then on scheduled period.
+
+Change the 'blink of change' so that it is in the coffe script.  At the moment it is on the job.  This means "last Updated" drifts
+
+docker
+
+airgapped dev environment
+
+work out good "load average" thresholds
+
+Add data and time as a spacer
+
+
+
