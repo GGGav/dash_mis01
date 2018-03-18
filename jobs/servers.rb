@@ -24,10 +24,11 @@ http.ca_file = './certs/CA1.crt'
 #Not secure is to leave it NONE, VERIFY_PEER is preffered.
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-server1_uri = '/monitor/mis/server?server=server1'
-
-# server1_data = {"name":"server1","uptime":0,"cpuUsage":0.00, :loadAverages=>:{:"1min"=>0.00,:"5min"=>0.00,:"15min"=>0.00}}
-server1_data = { "name" => "server1", "uptime" => 0,  "cpuUsage" => 0.00, "loadAverages" => { "1min": 0.00, "5min": 0.00, "15min": 0.00} }
+server_uri = '/monitor/mis/server'
+#  Returns an array of noServerSpecified
+# [ {"name":"dkrhost01","uptime":1,"cpuUsage":0.28,"loadAverages":{"1min":0.38,"5min":0.08,"15min":0.57}},
+#   {"name":"dkrhost02","uptime":2,"cpuUsage":0.36,"loadAverages":{"1min":0.62,"5min":0.92,"15min":0.35}},
+#   {"name":"dkrhost03","uptime":2,"cpuUsage":0.56,"loadAverages":{"1min":0.24,"5min":0.72,"15min":0.45}} ]
 
 SCHEDULER.every '5s', :first_in => 0 do |job|
 
@@ -35,24 +36,19 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
   # resp = http.request(Net::HTTP::Get.new("/monitor/mis/fileservers"))
   # next unless '200'.eql? resp.code
 
-  server1_dataprev = server1_data
-  resp = http.get(server1_uri)
+  resp = http.get(server_uri)
   next unless '200'.eql? resp.code
-  server1_data = JSON.parse(resp.body)
+  server_data = JSON.parse(resp.body)
+  # puts server_data.inspect
 
-  if server1_data["uptime"] != server1_dataprev["uptime"]
-    send_event('mis01_dkrhost01_uptime', { value: server1_data["uptime"]} )
-  end
-  if server1_data["cpuUsage"] != server1_dataprev["cpuUsage"]
-    send_event('mis01_dkrhost01_cpuusage', { value: server1_data["cpuUsage"]} )
-  end
-  if server1_data["loadAverages"]["1min"] != server1_dataprev["loadAverages"]["1min"]
-    send_event('mis01_dkrhost01_loadavg_1min', { value: server1_data["loadAverages"]["1min"]} )
-  end
-  if server1_data["loadAverages"]["5min"] != server1_dataprev["loadAverages"]["5min"]
-    send_event('mis01_dkrhost01_loadavg_5min', { value: server1_data["loadAverages"]["5min"]} )
-  end
-  if server1_data["loadAverages"]["15min"] != server1_dataprev["loadAverages"]["15min"]
-    send_event('mis01_dkrhost01_loadavg_15min', { value: server1_data["loadAverages"]["15min"]} )
-  end
+  server_data.each { |server|
+
+    id_base = "mis01_" + server["name"]
+
+    send_event(id_base + '_uptime', { value: server["uptime"]} )
+    send_event(id_base + '_cpuusage', { value: server["cpuUsage"]} )
+    send_event(id_base + '_loadavg_1min', { value: server["loadAverages"]["1min"]} )
+    send_event(id_base + '_loadavg_5min', { value: server["loadAverages"]["5min"]} )
+    send_event(id_base + '_loadavg_15min', { value: server["loadAverages"]["15min"]} )
+  }
 end
