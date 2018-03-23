@@ -8,7 +8,7 @@
 <div class="gridster">
   <ul>
     <!--  Dashboard Title -->
-    <li data-row="1" data-col="1" data-sizex="16" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="18" data-sizey="1">
       <div data-id="text_dashboard_title" data-view="Mistext" data-title="System Dashboard"></div>
     </li>
     <!--  Users -->
@@ -21,34 +21,42 @@
     <li data-row="3" data-col="3" data-sizex="2" data-sizey="2">
       <div data-id="mis01_users_pending" data-view="Misalert2" data-title="Pending" data-addclass-pending="isNotZero"></div>
     </li>
+    <!--  Spacer -->
+    <li data-row="2" data-col="5" data-sizex="1" data-sizey="3">
+      <div data-id="spacer1" data-view="Mistext"></div>
+    </li>
     <!--  Terminals -->
-    <li data-row="2" data-col="5" data-sizex="8" data-sizey="1">
+    <li data-row="2" data-col="6" data-sizex="8" data-sizey="1">
       <div data-id="text_terminals" data-view="Mistext" data-title="Terminals"></div>
     </li>
-    <li data-row="3" data-col="5" data-sizex="2" data-sizey="2">
+    <li data-row="3" data-col="6" data-sizex="2" data-sizey="2">
       <div data-id="mis01_terminals_deployed" data-view="Misalert2" data-title="Deployed"></div>
     </li>
-    <li data-row="3" data-col="7" data-sizex="2" data-sizey="2">
+    <li data-row="3" data-col="8" data-sizex="2" data-sizey="2">
       <div data-id="mis01_terminals_active" data-view="Misalert2" data-title="Active"></div>
     </li>
-    <li data-row="3" data-col="9" data-sizex="2" data-sizey="2">
+    <li data-row="3" data-col="10" data-sizex="2" data-sizey="2">
       <div data-id="mis01_terminals_loggedIn" data-view="Misalert2" data-title="Logged In" data-addclass-loggedin="isNotZero"></div>
     </li>
-    <li data-row="3" data-col="11" data-sizex="2" data-sizey="2">
+    <li data-row="3" data-col="12" data-sizex="2" data-sizey="2">
       <div data-id="mis01_terminals_outofdate" data-view="Misalert2" data-title="Out of Date" data-addclass-outofdate="isNotZero"></div>
     </li>
+    <!--  Spacer -->
+    <li data-row="2" data-col="14" data-sizex="1" data-sizey="3">
+      <div data-id="spacer2" data-view="Mistext"></div>
+    </li>
     <!--  File Servers-->
-    <li data-row="2" data-col="13" data-sizex="4" data-sizey="1">
+    <li data-row="2" data-col="15" data-sizex="4" data-sizey="1">
       <div data-id="text_fileservers" data-view="Mistext" data-title="File Servers"></div>
     </li>
-    <li data-row="3" data-col="13" data-sizex="2" data-sizey="2">
+    <li data-row="3" data-col="15" data-sizex="2" data-sizey="2">
       <div data-id="mis01_fileserver_1" data-view="Misalert2" data-title="File Server 1" data-addclass-downloading="isNotZero"></div>
     </li>
-    <li data-row="3" data-col="15" data-sizex="2" data-sizey="2">
+    <li data-row="3" data-col="17" data-sizex="2" data-sizey="2">
       <div data-id="mis01_fileserver_2" data-view="Misalert2" data-title="File Server 2" data-addclass-downloading="isNotZero"></div>
     </li>
-    <!--  Hostsa Banner -->
-    <li data-row="5" data-col="1" data-sizex="16" data-sizey="1">
+    <!--  Hosts Banner -->
+    <li data-row="5" data-col="1" data-sizex="18" data-sizey="1">
       <div data-id="text_hosts_title" data-view="Mistext" data-title="Docker Hosts"></div>
     </li>
     <!-- DKRHOST01 -->
@@ -56,18 +64,24 @@
       <div data-id="text_dkrhost01" data-view="Mistext" data-title="DKRHOST01"></div>
     </li>
     <li data-row="6" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost01_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis01_dkrhost01_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="8" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis01_dkrhost01_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="6" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost01_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="8" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost01_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="6" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="6" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost01_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="6" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="6" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost01_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="6" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="6" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost01_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
     <!-- DKRHOST02 -->
@@ -75,18 +89,24 @@
       <div data-id="text_dkrhost02" data-view="Mistext" data-title="DKRHOST02"></div>
     </li>
     <li data-row="10" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost02_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis01_dkrhost02_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="12" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis01_dkrhost02_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="10" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost02_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="12" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost02_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="10" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="10" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost02_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="10" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="10" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost02_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="10" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="10" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost02_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
     <!-- DKRHOST03 -->
@@ -94,18 +114,24 @@
       <div data-id="text_dkrhost03" data-view="Mistext" data-title="DKRHOST03"></div>
     </li>
     <li data-row="14" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost03_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis01_dkrhost03_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="16" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis01_dkrhost03_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="14" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost03_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="16" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost03_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="14" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="14" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost03_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="14" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="14" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost03_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="14" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="14" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost03_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
     <!-- DKRHOST04 -->
@@ -113,18 +139,24 @@
       <div data-id="text_dkrhost04" data-view="Mistext" data-title="DKRHOST04"></div>
     </li>
     <li data-row="18" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost04_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis01_dkrhost04_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="20" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis01_dkrhost04_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="18" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost04_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="20" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost04_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="18" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="18" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost04_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="18" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="18" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost04_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="18" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="18" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost04_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
     <!-- DKRHOST05 -->
@@ -132,18 +164,24 @@
       <div data-id="text_dkrhost05" data-view="Mistext" data-title="DKRHOST05"></div>
     </li>
     <li data-row="22" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost05_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis05_dkrhost02_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="24" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis05_dkrhost02_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="22" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost05_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="24" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost05_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="22" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="22" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost05_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="22" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="22" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost05_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="22" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="22" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost05_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
     <!-- DKRHOST06 -->
@@ -151,18 +189,24 @@
       <div data-id="text_dkrhost06" data-view="Mistext" data-title="DKRHOST06"></div>
     </li>
     <li data-row="26" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost06_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis01_dkrhost06_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="28" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis01_dkrhost06_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="26" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost06_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="28" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost06_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="26" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="26" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost06_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="26" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="26" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost06_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="26" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="26" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost06_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
     <!-- DKRHOST07 -->
@@ -170,18 +214,24 @@
       <div data-id="text_dkrhost07" data-view="Mistext" data-title="DKRHOST07"></div>
     </li>
     <li data-row="30" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="mis01_dkrhost07_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+      <div id="alertSmaller" data-id="mis01_dkrhost07_running" data-view="Misalert2" data-title="Running Containers"></div>
     </li>
     <li data-row="32" data-col="3" data-sizex="2" data-sizey="2">
+      <div id="alertSmaller" data-id="mis01_dkrhost07_stopped" data-view="Misalert2" data-title="Stopped Containers" data-addclass-stopped="isNotZero"></div>
+    </li>
+    <li data-row="30" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="mis01_dkrhost07_uptime" data-view="Misalert2" data-title="Uptime" ></div>
+    </li>
+    <li data-row="32" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="mis01_dkrhost07_cpuusage" data-view="Misalert2" data-title="CPU Usage" ></div>
     </li>
-    <li data-row="30" data-col="5" data-sizex="4" data-sizey="4">
+    <li data-row="30" data-col="7" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost07_loadavg_1min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="1 min" data-height="180" data-width="162" data-min="0" data-max="10" data-suffix="%"></div>
     </li>
-    <li data-row="30" data-col="9" data-sizex="4" data-sizey="4">
+    <li data-row="30" data-col="11" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost07_loadavg_5min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="5 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
-    <li data-row="30" data-col="13" data-sizex="4" data-sizey="4">
+    <li data-row="30" data-col="15" data-sizex="4" data-sizey="4">
       <div data-id="mis01_dkrhost07_loadavg_15min" data-view="Mismeter" data-title="Load Average" data-threshold1="0.4" data-threshold2="0.7" data-moreinfo="15 min" data-height="180" data-width="162" data-min="0" data-max="100" data-suffix="%"></div>
     </li>
   </ul>

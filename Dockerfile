@@ -1,0 +1,42 @@
+##
+##  Based in https://github.com/visibilityspots/dockerfile-smashing/blob/master/Dockerfile
+##
+FROM ubuntu:16.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils dialog curl sudo vim iputils-ping ca-certificates build-essential ruby ruby-dev tzdata
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
+    apt-get -y install nodejs && \
+    apt-get -y clean
+ENV TZ 'Europe/London'
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN gem install bundler smashing && \
+    mkdir /smashing && \
+    smashing new smashing && \
+    cd /smashing && \
+    bundle && \
+    ln -s /smashing/dashboards /dashboards && \
+    ln -s /smashing/jobs /jobs && \
+    ln -s /smashing/assets /assets && \
+    ln -s /smashing/lib /lib-smashing && \
+    ln -s /smashing/public /public && \
+    ln -s /smashing/widgets /widgets && \
+    mkdir /smashing/certs && \
+    ln -s /smashing/certs /certs && \
+    mkdir /smashing/config && \
+    mv /smashing/config.ru /smashing/config/config.ru && \
+    ln -s /smashing/config/config.ru /smashing/config.ru && \
+    ln -s /smashing/config /config
+
+COPY run.sh /
+
+VOLUME ["/dashboards", "/jobs", "/lib-smashing", "/config", "/public", "/widgets", "/assets". "/certs"]
+
+ENV PORT 3030
+EXPOSE $PORT
+WORKDIR /smashing
+
+#CMD ["/run.sh"]
+CMD ["/bin/bash"]
+

@@ -26,9 +26,9 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 server_uri = '/monitor/mis/server'
 #  Returns an array of noServerSpecified
-# [ {"name":"dkrhost01","uptime":1,"cpuUsage":0.28,"loadAverages":{"1min":0.38,"5min":0.08,"15min":0.57}},
-#   {"name":"dkrhost02","uptime":2,"cpuUsage":0.36,"loadAverages":{"1min":0.62,"5min":0.92,"15min":0.35}},
-#   {"name":"dkrhost03","uptime":2,"cpuUsage":0.56,"loadAverages":{"1min":0.24,"5min":0.72,"15min":0.45}} ]
+# [ {"name":"dkrhost01","uptime":1,"cpuUsage":0.28,"containers":{"running":17,"stopped":1},"loadAverages":{"1min":0.38,"5min":0.08,"15min":0.57}},
+#   {"name":"dkrhost02","uptime":2,"cpuUsage":0.36,"containers":{"running":17,"stopped":1},"loadAverages":{"1min":0.62,"5min":0.92,"15min":0.35}},
+#   {"name":"dkrhost03","uptime":2,"cpuUsage":0.56,"containers":{"running":18,"stopped":0},"loadAverages":{"1min":0.24,"5min":0.72,"15min":0.45}} ]
 
 SCHEDULER.every '5s', :first_in => 0 do |job|
 
@@ -45,6 +45,8 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
 
     id_base = "mis01_" + server["name"]
 
+    send_event(id_base + '_running', { value: server["containers"]["running"]} )
+    send_event(id_base + '_stopped', { value: server["containers"]["stopped"]} )
     send_event(id_base + '_uptime', { value: server["uptime"]} )
     send_event(id_base + '_cpuusage', { value: server["cpuUsage"]} )
     send_event(id_base + '_loadavg_1min', { value: server["loadAverages"]["1min"]} )

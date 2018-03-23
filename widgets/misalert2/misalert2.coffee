@@ -13,3 +13,6 @@ class Dashing.Misalert2 extends Dashing.Widget
 
   @accessor 'isNotZero', ->
     @get('value') > 0
+
+  @accessor 'always', ->
+    1 > 0
