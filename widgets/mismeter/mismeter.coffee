@@ -15,7 +15,7 @@ class Dashing.Mismeter extends Dashing.Widget
     @onData(this)
 
   onData: (data) ->
-    console.log data.value + ' ' + @get('threshold1') + ' ' + @get('threshold2')
+    # console.log data.value + ' ' + @get('threshold1') + ' ' + @get('threshold2')
 
     if not data.value?
       console.log "Remove all"
