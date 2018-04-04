@@ -2,14 +2,14 @@
 // Sass declarations
 // ----------------------------------------------------------------------------
 $background-color-default:  #0f9;  // green
-$background-color-good:  #0f9;     // greed
-$background-color-middle: orange;     // orange
+$background-color-good:  #0f9;     // green
+$background-color-middle: #ffa500; // orange
 $background-color-bad:  #f00;      // red
 
 $title-color:       rgba(255, 255, 255, 1);
 $moreinfo-color:    rgba(255, 255, 255, 1);
 
-$meter-background:  rgba(0, 0, 0, 0.3);
+$meter-background:  rgba(0, 0, 0, .3);
 
 // ----------------------------------------------------------------------------
 // Widget-meter2 styles
@@ -33,7 +33,7 @@ $meter-background:  rgba(0, 0, 0, 0.3);
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, .3);
     font-size: 12px;
   }
 }

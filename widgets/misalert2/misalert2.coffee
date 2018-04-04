@@ -6,6 +6,7 @@ class Dashing.Misalert2 extends Dashing.Widget
   onData: (data) ->
     # Handle incoming data
     # You can access the html node of this widget with `@node`
+    # The following line will 'blink' the widget when new data is received
     $(@node).fadeOut().fadeIn()
 
   @accessor 'isTooHigh', ->
