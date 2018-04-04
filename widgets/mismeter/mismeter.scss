@@ -36,16 +36,16 @@ $meter-background:  rgba(0, 0, 0, .3);
     color: rgba(0, 0, 0, .3);
     font-size: 12px;
   }
-}
 
-.widget-mismeter.bad {
-  background-color: $background-color-bad;
-}
+  &.bad {
+    background-color: $background-color-bad;
+  }
 
-.widget-mismeter.middle {
-  background-color: $background-color-middle;
-}
+  &.middle {
+    background-color: $background-color-middle;
+  }
 
-.widget-mismeter.good {
-  background-color: $background-color-good;
+  &.good {
+    background-color: $background-color-good;
+  }
 }
