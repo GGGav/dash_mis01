@@ -9,6 +9,11 @@ h4 {
   background: #0f9;
   font-size: 32px;
   font-weight: bold;
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 8px;
+  }
 }
 
 .danger {
@@ -16,6 +21,10 @@ h4 {
 }
 
 .pending {
+  background: #f00;
+}
+
+.stopped {
   background: #f00;
 }
 
@@ -29,4 +38,8 @@ h4 {
 
 .outofdate {
   background: #c9f;
+}
+
+p.updated-at-small {
+  font-size: 8px;
 }
